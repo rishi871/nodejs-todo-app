@@ -7,15 +7,19 @@
     <body>
         <h1>My Todo List</h1>
         <div id="todo-table">
-            <form>
-                <input type="text" name="itme" placeholder="Add new item..." required />
+            <form method="POST">
+                <input type="text" name="item" placeholder="Add new item..." required />
                 <button type="submit"> Add Item</button>
             </form>
             <ul>
-                <li>Item 1</li>
-                <li>Item 2</li>
-                <li>Item 3</li>
+               <% for(let i=0; i<todo.length; i++) { %>
+                <li><%= todo[i].item %></li>
+                <% } %>
             </ul>
         </div>
+        <!-- jQuery first -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <!-- Your JS file after jQuery -->
+    <script src="/assets/todo-list.js"></script>
     </body>
 </html>
